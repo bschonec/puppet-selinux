@@ -26,7 +26,7 @@ define selinux::port (
 ) {
 
   include ::selinux
-
+notify{'hello':}
   if $ensure == 'present' {
     Anchor['selinux::module post']
     -> Selinux::Port[$title]
